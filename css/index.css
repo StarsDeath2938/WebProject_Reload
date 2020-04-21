@@ -17,6 +17,9 @@ header {
     top: 80px;
 }
 
+main > .main_frame {
+    padding-top: 0;
+}
 .top_intro {
     display: flex;
     flex-wrap: wrap;
