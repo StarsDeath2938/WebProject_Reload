@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blurry Lights - Main Page</title>
+    <link rel="shortcut icon" href="./BlurryLights.ico">
+
+    <link rel="stylesheet" href="./lib/reset.css">
+    <link rel="stylesheet" href="./css/globalStyle.css">
+    <link rel="stylesheet" href="./css/index.css">
+
+    <script src="./lib/jquery-3.5.0.min.js"></script>
+    <script src="./js/index/dynamic_bg.js"></script>
+    <script src="./js/nav_line.js"></script>
+    <script>
+        $(() => { $('a').on('click', function (ev) { ev.preventDefault() }) });
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <div class="nav_line">
+            <div class="main_frame">
+                <div class="nav_list left">
+                    <div class="nav_item">HelloWorld</div>
+                    <ul class="nav_selection">
+                        <li>Hello World</li>
+                        <i></i>
+                        <li>Hello World</li>
+                        <i></i>
+                        <li>Hello World</li>
+                    </ul>
+                </div>
+                <div class="nav_list left">
+                    <div class="nav_item">HelloWorld</div>
+                    <ul class="nav_selection">
+                        <li>Hello World</li>
+                        <i></i>
+                        <li>Hello World</li>
+                        <i></i>
+                        <li>Hello World</li>
+                    </ul>
+                </div>
+                <div class="nav_list right">
+                    <div class="nav_item">GoodBye Earth</div>
+                    <ul class="nav_selection">
+                        <li>GoodBye Earth</li>
+                        <i></i>
+                        <li>GoodBye Earth</li>
+                        <i></i>
+                        <li>GoodBye Earth</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="dynamic_bg"></div>
+        <div class="main_frame">
+            <div class="top_intro">
+                <div class="intro_box">
+                    <h1 class="intro_title">Blurry Lights</h1>
+                    <div class="intro_text">I pray for you day and night,passer.</div>
+                    <div class="intro_text">Come and hug me,I still bless for you.</div>
+                    <div class="more_info"><a href="#">Learn More</a></div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer></footer>
+
+</body>
+
+</html>

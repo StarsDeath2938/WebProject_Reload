@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blurry Lights - Halo</title>
+    <link rel="shortcut icon" href="./BlurryLights.ico">
+
+    <link rel="stylesheet" href="./lib/reset.css">
+    <link rel="stylesheet" href="./css/globalStyle.css">
+    <link rel="stylesheet" href="./css/halo.css">
+
+    <script src="./lib/jquery-3.5.0.min.js"></script>
+    <script src="./js/nav_line.js"></script>
+    <script src="./js/halo/dismiss.js"></script>
+    <script src="./js/halo/add_topic.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="nav_line">
+            <div class="main_frame">
+                <div class="nav_list left">
+                    <div class="nav_item">HelloWorld</div>
+                    <ul class="nav_selection">
+                        <li>Hello World</li>
+                        <i></i>
+                        <li>Hello World</li>
+                        <i></i>
+                        <li>Hello World</li>
+                    </ul>
+                </div>
+                <div class="nav_list left">
+                    <div class="nav_item">HelloWorld</div>
+                    <ul class="nav_selection">
+                        <li>Hello World</li>
+                        <i></i>
+                        <li>Hello World</li>
+                        <i></i>
+                        <li>Hello World</li>
+                    </ul>
+                </div>
+                <div class="nav_list right">
+                    <div class="nav_item">GoodBye Earth</div>
+                    <ul class="nav_selection">
+                        <li>GoodBye Earth</li>
+                        <i></i>
+                        <li>GoodBye Earth</li>
+                        <i></i>
+                        <li>GoodBye Earth</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <img src="./img/TopLine.png" alt="Fail Load Resources" class="topline_img">
+        <div class="main_frame">
+
+            <div class="content_frame">
+
+                <div class="content">
+                    <p>Website projects are still in developing. COMING SOON! <a href="#" id="dismiss">DISMISS</a></p>
+                </div>
+
+                <div class="content">
+                    <h2>Soartex - Intro</h2>
+                    <div class="divider"></div>
+                    <p>
+                        Soartex is a smooth contemporary 64x art style for Minecraft. The textures, originally made by
+                        Soar49, have been developed and updated by fans over the past three years. These textures are
+                        carefully designed to be detailed, but not photo-realistic; organic, but not cartoony. There are
+                        two official continuations of Soartex: Fanver and Invictus.
+                    </p>
+                    <p>
+                        Fanver is a community continuation of Soartex, a texture pack by Soar49. Fans are encouraged to
+                        contribute textures through the forum. These contributions are reviewed by graphic designers,
+                        who make friendly recommendations and ultimately determine the content of updates. Fanver is
+                        known for being faithful to the original work of Soar49, with as few alterations as possible.
+                    </p>
+                    <p>
+                        Invictus is a second continuation developed by Shoeboxam with Goldbattle. The focus shifts to
+                        pattern and aliasing reduction for bigger builds, mipmapping optimization, presaturation for
+                        color depth in foliage, built in shaders and block models, comprehensive worldgen CTM overrides
+                        and a subtle departure from Soar49's original artwork for a stylistic revival. Development is
+                        visible on the <a href="#">Invictus Github</a>, but public contributions are not being accepted.
+                    </p>
+                    <div class="avator_frame">
+                        <div class="avator_info">
+                            Last Edited By <a class="avator_name">VioletBlessing</a>,
+                            <span class="getDate">April.21 2020</span>
+                        </div>
+                        <div class="avator"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <div class="hover_frame">
+        <div class="hover_submit">
+            <div class="submit_title">Create New Topic</div>
+            <div class="submit_username">
+                <div class="submit_firstname">
+                    <span>Username:</span>
+                    <input type="text" name="username" id="username" maxlength="15">
+                </div>
+                <div class="submit_lastname">
+                    <span>Topic Title:</span>
+                    <input type="text" name="username" id="topictitle" maxlength="18">
+                </div>
+            </div>
+            <div class="submit_content">
+                <h3>Content:</h3>
+                <textarea name="submit_content" id="content_textarea"></textarea>
+            </div>
+            <div id="submit">Click Anywhere else to Exit</div>
+        </div>
+    </div>
+
+    <div id="add_new_topic">+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,252 @@
+$pureBlack: #4b4b4b;
+$lightBlack:#6b6b6b;
+$darkGray:  #8d8d8d;
+$pureGray:  #afafaf;
+$lightGray: #cdcdcd;
+$darkWhite: #e6e6e6;
+$pureWhite: #fafafa;
+// ---
+$slateGray1:#bfbfbf;
+$slateGray2:#dcdcdc;
+// ---
+$darkSteelBlue:     #7692B4;
+$lightSteelBlue:    #A2B5CD;
+$darkYellow:        #aea49c;
+$lightYellow:       #D4CCC0;
+
+@mixin fullSize {
+    width: 100%;
+    height: 100%;
+}
+
+@mixin defaultImg {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@mixin font_selection {
+    text-align: center;
+
+    color: $lightBlack;
+    font-size: 16px;
+    font-weight: lighter;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+@mixin font_title {
+    text-align: left;
+    text-indent: 0em;
+
+    color: $pureBlack;
+    font-size: 36px;
+    font-weight: normal;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+@mixin font_maintext {
+    text-align: left;
+    text-indent: 1em;
+    line-height: 28px;
+
+    color: $lightBlack;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+@mixin font_link {
+    color: $darkSteelBlue;
+}
+
+@mixin font_link_hover {
+    color: $lightSteelBlue;
+    text-decoration: underline;
+}
+
+// ---
+
+header {
+    position: absolute;
+    z-index: 1;
+    top: 325px;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+}
+
+// --- nav
+
+.main_frame {
+    box-sizing: border-box;
+    width: 1070px;
+    margin: 0 auto;
+}
+
+.nav_line {
+    @include fullSize;
+    display: flex;
+    background-color: $pureGray;
+    box-shadow: 0px 0px 4px $lightGray;
+}
+
+.nav_list {
+    margin: 0 10px;
+    height: auto;
+
+    &.left {
+        width: 120px;
+        float: left;
+    }
+    &.right {
+        width: 160px;
+        float: right;
+    }
+}
+
+.nav_item {
+    @include font_selection;
+
+    box-sizing: border-box;
+    float: left;
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+
+    &:hover {
+        transition: all 0.4s;
+        color: $darkGray;
+        background-color: $lightGray;
+    }
+}
+
+.nav_selection {
+    display: none;
+    float: left;
+    width: 100%;
+    border: 1px solid $slateGray1;
+    border-top: 1px solid $lightGray;
+    box-sizing: border-box;
+    background-color: $slateGray2;
+
+    color: $lightBlack;
+    text-align: center;
+    font-size: 14px;
+
+    &>li {
+        float: left;
+        width: 100%;
+        height: 45px;
+        line-height: 45px;
+        box-sizing: border-box;
+
+        &:hover {
+            transition: all 0.3s;
+            color: $darkGray;
+        }
+
+        &:last-child {
+            border-bottom: unset;
+        }
+    }
+
+    &>i {
+        float: left;
+        width: 75%;
+        height: 0px;
+        border-top: 1px solid $lightBlack;
+        margin: 0 12.5%;
+    }
+}
+
+// --- main
+
+main {
+    &> .main_frame {
+        padding-top: 50px;
+    }
+}
+
+.topline_img {
+    width: 100%;
+    height: 325px;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.content_frame {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+}
+
+.content {
+    box-sizing: border-box;
+    margin: 25px 1%;
+    padding: 20px 30px;
+    width: 98%;
+    background-color: $darkWhite;
+    overflow: hidden;
+
+    &>h2 {
+        @include font_title;
+        margin: 20px 10px 0;
+    }
+
+    &>.divider {
+        width: 98%;
+        height: 0;
+        margin: 20px 1%;
+        margin-top: 19px;
+        border-top: 1px solid $pureBlack;
+    }
+
+    &>p {
+        @include font_maintext;
+        box-sizing: border-box;
+        padding: 5px 1%;
+    }
+
+    & a {
+        @include font_link;
+
+        &:hover {
+            @include font_link_hover;
+        }
+    }
+
+    .avator_frame {
+        margin-top: 5px;
+        height: 60px;
+        float: right;
+        overflow: hidden;
+
+        &>* {
+            float: left;
+        }
+
+        &>.avator_info{
+            @include font_selection;
+
+            &>.avator_name {
+                @include font_link;
+
+                &:hover {
+                    @include font_link_hover;
+                }
+            }
+        }
+        
+        &>.avator {
+            @include defaultImg;
+            box-sizing: border-box;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            border: 1px solid $lightBlack;
+        }
+    }
+
+}
