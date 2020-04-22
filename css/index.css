@@ -57,7 +57,7 @@ main > .main_frame {
     padding: 5px 0;
 }
 
-.more_info {
+.index_more_info {
     position: absolute;
     top: 270px;
     justify-self: center;
@@ -70,11 +70,11 @@ main > .main_frame {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.more_info > a {
+.index_more_info > a {
     color: #afafaf;
 }
 
-.more_info > a:hover {
+.index_more_info > a:hover {
     transition: all 0.3s;
     color: #6b6b6b;
 }

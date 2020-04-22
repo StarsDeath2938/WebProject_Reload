@@ -43,10 +43,8 @@ $(() => {
     })
 
     $('.hover_frame').on('click', () => {
-        $('.hover_frame').css({ display: 'none' });
-
-        $('#username').val('');
-        $('#topictitle').val('');
+        $('.hover_frame').hide();
+        $('input').val('');
         $('textarea').val('');
     });
 
@@ -55,9 +53,8 @@ $(() => {
             createElement();
             $('#submit').html('Click Anywhere else to Exit');
 
-            $('.hover_frame').css({ display: 'none' });
-            $('#username').val('');
-            $('#topictitle').val('');
+            $('.hover_frame').hide();
+            $('input').val('');
             $('textarea').val('');
         }
     });
