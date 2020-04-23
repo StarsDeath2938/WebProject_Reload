@@ -255,6 +255,7 @@ main > .main_frame {
   text-align: center;
   font-size: 24px;
   color: #4b4b4b;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .submit_info_frame {

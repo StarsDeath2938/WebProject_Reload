@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blurry Lights - Cube</title>
+    <link rel="shortcut icon" href="./BlurryLights.ico">
+
+    <link rel="stylesheet" href="./lib/reset.css">
+    <link rel="stylesheet" href="./css/globalStyle.css">
+    <link rel="stylesheet" href="./css/cube.css">
+
+    <script src="./lib/jquery-3.5.0.min.js"></script>
+    <script src="./js/nav_line.js"></script>
+    <script src="./js/cube/cube_form.js"></script>
+    <script src="./js/cube/slide_form.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="nav_line">
+            <div class="main_frame">
+                <div class="nav_list left">
+                    <div class="nav_item">HelloWorld</div>
+                    <ul class="nav_selection">
+                        <li>Hello World</li>
+                        <i></i>
+                        <li>Hello World</li>
+                        <i></i>
+                        <li>Hello World</li>
+                    </ul>
+                </div>
+                <div class="nav_list left">
+                    <div class="nav_item">HelloWorld</div>
+                    <ul class="nav_selection">
+                        <li>Hello World</li>
+                        <i></i>
+                        <li>Hello World</li>
+                        <i></i>
+                        <li>Hello World</li>
+                    </ul>
+                </div>
+                <div class="nav_list right">
+                    <div class="nav_item">GoodBye Earth</div>
+                    <ul class="nav_selection">
+                        <li>GoodBye Earth</li>
+                        <i></i>
+                        <li>GoodBye Earth</li>
+                        <i></i>
+                        <li>GoodBye Earth</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <img src="./img/TopLine.png" alt="Fail Load Resources" class="topline_img">
+        <div class="main_frame">
+            <!-- // -->
+            <div class="cube_frame">
+                <div class="cube_box">
+                    <div class="cube_outer">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="cube_inner">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <!-- // -->
+            <div class="config_frame">
+                <div class="config_cube content">
+                    <h2>Color Config</h2>
+                    <div class="divider"></div>
+                    <div class="prop_frame" id="outer_color">
+                        <div class="submit_title">Outer Box</div>
+                        <div class="submit_info_frame">
+                            <div class="prop_box">
+                                <div class="prop_name">Red:</div>
+                                <input type="text" name="outer_prop_red" id="outer_propRed">
+                                <div class="prop_name">Green:</div>
+                                <input type="text" name="outer_prop_green" id="outer_propGreen">
+                                <div class="prop_name">Blue:</div>
+                                <input type="text" name="outer_prop_blue" id="outer_propBlue">
+                            </div>
+                            <div class="prop_box right">
+                                <div class="prop_name">HEX Value:</div>
+                                <input type="text" name="outer_prop_hex" class="wider" id="outer_propHex">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // -->
+                    <div class="prop_frame" id="inner_color">
+                        <div class="submit_title">Inner Box</div>
+                        <div class="submit_info_frame">
+                            <div class="prop_box">
+                                <div class="prop_name">Red:</div>
+                                <input type="text" name="inner_prop_red" id="inner_propRed">
+                                <div class="prop_name">Green:</div>
+                                <input type="text" name="inner_prop_green" id="inner_propGreen">
+                                <div class="prop_name">Blue:</div>
+                                <input type="text" name="inner_prop_blue" id="inner_propBlue">
+                            </div>
+                            <div class="prop_box right">
+                                <div class="prop_name">HEX Value:</div>
+                                <input type="text" name="inner_prop_hex" class="wider" id="inner_propHex">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // -->
+                    <div class="prop_frame" id="bg_color">
+                        <div class="submit_title">Background</div>
+                        <div class="submit_info_frame">
+                            <div class="prop_box">
+                                <div class="prop_name">Red:</div>
+                                <input type="text" name="bg_prop_red" id="bg_propRed">
+                                <div class="prop_name">Green:</div>
+                                <input type="text" name="bg_prop_green" id="bg_propGreen">
+                                <div class="prop_name">Blue:</div>
+                                <input type="text" name="bg_prop_blue" id="bg_propBlue">
+                            </div>
+                            <div class="prop_box right">
+                                <div class="prop_name">HEX Value:</div>
+                                <input type="text" name="bg_prop_hex" class="wider" id="bg_propHex">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // -->
+                <div class="config_cube content">
+                    <h2>Advance Config</h2>
+                    <div class="divider"></div>
+                    <div class="prop_frame" id="outer_size">
+                        <div class="submit_title">Outer Box</div>
+                        <div class="submit_info_frame">
+                            <div class="prop_name">Opacity:</div>
+                            <input type="text" id="outer_opacity">
+                            <div class="prop_scroll_frame">
+                                <div class="prop_scroll_box">
+                                    <div class="scroll_btn"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prop_frame" id="inner_size">
+                        <div class="submit_title">Inner Box</div>
+                        <div class="submit_info_frame">
+                            <div class="prop_name">Opacity:</div>
+                            <input type="text" id="inner_opacity">
+                            <div class="prop_scroll_frame">
+                                <div class="prop_scroll_box">
+                                    <div class="scroll_btn"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // -->
+            </div>
+            <!-- // -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="main_frame">
+            <div class="info_frame">
+                <div class="more_info">More Info</div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
