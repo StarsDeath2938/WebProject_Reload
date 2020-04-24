@@ -55,7 +55,7 @@ $(() => {
 
     $('#outer_opacity, #inner_opacity').on('blur', function () {
         isNaN($(this).val()) ? $(this).val(0) : null;
-        let value = $(this).val() * $('.prop_scroll_box').outerWidth();
+        let value = $(this).val() * ($('.prop_scroll_box').outerWidth() - $('.scroll_btn').outerWidth() / 2);
         value <= $('.scroll_btn').outerWidth() / 2 ? value = $('.scroll_btn').outerWidth() / 2 : null;
         value >= $('.prop_scroll_box').width() - $('.scroll_btn').outerWidth() / 2 ? value = $('.prop_scroll_box').width() - $('.scroll_btn').outerWidth() / 2 : null;
         $(this).val() < 0 ? $(this).val(0) : null;

@@ -31,7 +31,7 @@ $(() => {
 
     // ---
 
-    $('#add_new_topic').on('click', () => {
+    $('#fixed_btn').on('click', () => {
         $('.hover_frame').css({ display: 'flex' });
     });
 
@@ -53,6 +53,9 @@ $(() => {
     $('#submit').on('click', () => {
         if ($('#mainTitle').val().trim() != '' && $('#subTitle').val().trim() != '') {
             createElement();
+            if (Math.floor($('.list_frame>div:last-child').offset().top - $(document).scrollTop() - $(window).height() + $('.list_frame').children('div').height() / 3) < 0) {
+                $('.list_frame>div:last-child').children('.img_effect').animate({ 'opacity': 1 }, 'fast');
+            }
 
             $('#submit').html('Click Anywhere else to Exit');
             $('.hover_frame').hide();

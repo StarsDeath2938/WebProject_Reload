@@ -28,7 +28,7 @@ $(() => {
 
     // ---
 
-    $('#add_new_topic').on('click', () => {
+    $('#fixed_btn').on('click', () => {
         $('.hover_frame').css({ display: 'flex' });
     });
 
