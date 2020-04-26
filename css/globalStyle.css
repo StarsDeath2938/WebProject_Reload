@@ -27,6 +27,10 @@ li {
   float: left;
 }
 
+input:focus {
+  outline: none;
+}
+
 .main_frame {
   box-sizing: border-box;
   width: 1070px;

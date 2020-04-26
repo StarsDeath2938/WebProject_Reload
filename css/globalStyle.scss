@@ -96,6 +96,10 @@ li {
     float: left;
 }
 
+input:focus {
+    outline: none;
+}
+
 // --- nav
 
 .main_frame {
