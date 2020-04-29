@@ -307,7 +307,7 @@ input:focus {
   text-indent: 0.5em;
   border: 0px solid transparent;
   border-bottom: 2px solid #afafaf;
-  background-color: #eaeaea;
+  background-color: #e6e6e6;
 }
 
 .submit_info_frame select {
@@ -318,7 +318,7 @@ input:focus {
   text-indent: 0.5em;
   border: 0px solid transparent;
   border-bottom: 2px solid #afafaf;
-  background-color: #eaeaea;
+  background-color: #e6e6e6;
 }
 
 .submit_info_frame select:focus {
@@ -442,6 +442,10 @@ input:focus {
   text-align: center;
 }
 
+.table_frame > table tr:hover {
+  background-color: #dcdcdc;
+}
+
 .table_frame > table th {
   border-bottom: 2px solid #cdcdcd;
   color: #4b4b4b;
@@ -485,7 +489,7 @@ input:focus {
   text-align: center;
   border: 1px solid #afafaf;
   border-right: 0px;
-  background-color: #eaeaea;
+  background-color: #fafafa;
 }
 
 .table_frame .table_pagination > li:first-child {
@@ -499,6 +503,14 @@ input:focus {
 
 .table_frame .table_pagination > li > a {
   text-decoration: none;
+}
+
+.table_frame .table_pagination > li.active {
+  background-color: #8291A5;
+}
+
+.table_frame .table_pagination > li.active > a {
+  color: #eaeaea;
 }
 
 .info_frame {

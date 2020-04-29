@@ -364,7 +364,7 @@ input:focus {
     
         border: 0px solid transparent;
         border-bottom: 2px solid #afafaf;
-        background-color: #eaeaea;
+        background-color: #e6e6e6;
     }
 
     & select {
@@ -378,7 +378,7 @@ input:focus {
 
         border: 0px solid transparent;
         border-bottom: 2px solid #afafaf;
-        background-color: #eaeaea;
+        background-color: #e6e6e6;
 
         &:focus {
             outline: none;
@@ -512,10 +512,13 @@ input:focus {
             text-align: center;
         }
 
+        & tr:hover {
+            background-color: #dcdcdc;
+        }
+
         & th {
             border-bottom: 2px solid #cdcdcd;
 
-            // text-align: left;
             color: #4b4b4b;
             font-size: 16px;
             font-weight: bold;
@@ -572,7 +575,7 @@ input:focus {
             border: 1px solid #afafaf;
             border-right: 0px;
 
-            background-color: #eaeaea;
+            background-color: #fafafa;
 
             &:first-child {
                 border-radius: 5px 0px 0px 5px;
@@ -585,6 +588,14 @@ input:focus {
 
             & > a {
                 text-decoration: none;
+            }
+
+            &.active {
+                background-color: #8291A5;
+
+                &>a {
+                    color: #eaeaea;
+                }
             }
         }
     }
