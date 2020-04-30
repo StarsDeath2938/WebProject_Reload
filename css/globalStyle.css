@@ -31,6 +31,30 @@ input:focus {
   outline: none;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #8d8d8d;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #bfbfbf;
+  border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb:horizontal:hover, ::-webkit-scrollbar-thumb:vertical:hover {
+  background-color: #dcdcdc;
+}
+
+::-webkit-scrollbar-button {
+  width: 8px;
+  height: 0;
+  display: block;
+}
+
 .main_frame {
   box-sizing: border-box;
   width: 1070px;
@@ -136,7 +160,7 @@ input:focus {
   margin: 25px 1%;
   padding: 20px 30px;
   width: 98%;
-  background-color: #e6e6e6;
+  background-color: #eaeaea;
   overflow: hidden;
 }
 
@@ -307,7 +331,7 @@ input:focus {
   text-indent: 0.5em;
   border: 0px solid transparent;
   border-bottom: 2px solid #afafaf;
-  background-color: #e6e6e6;
+  background-color: #eaeaea;
 }
 
 .submit_info_frame select {
@@ -318,7 +342,7 @@ input:focus {
   text-indent: 0.5em;
   border: 0px solid transparent;
   border-bottom: 2px solid #afafaf;
-  background-color: #e6e6e6;
+  background-color: #eaeaea;
 }
 
 .submit_info_frame select:focus {

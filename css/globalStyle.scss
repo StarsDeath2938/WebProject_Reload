@@ -3,7 +3,7 @@ $lightBlack:#6b6b6b;
 $darkGray:  #8d8d8d;
 $pureGray:  #afafaf;
 $lightGray: #cdcdcd;
-$darkWhite: #e6e6e6;
+$darkWhite: #eaeaea;
 $pureWhite: #fafafa;
 // ---
 $slateGray1:#bfbfbf;
@@ -98,6 +98,32 @@ li {
 
 input:focus {
     outline: none;
+}
+
+// --- 
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #8d8d8d;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #bfbfbf;
+    border-radius: 25px;
+
+    &:horizontal:hover,&:vertical:hover {
+        background-color: #dcdcdc;
+    }
+}
+
+::-webkit-scrollbar-button {
+    width: 8px;
+    height: 0;
+    display: block;
 }
 
 // --- nav
@@ -294,10 +320,10 @@ input:focus {
     background-color: #8b8b8b;
 
     font-size: 42px;
-    color: #eaeaea;
+    color: $darkWhite;
     line-height: 55px;
     text-align: center;
-    box-shadow: 0px 0px 4px #6b6b6b;
+    box-shadow: 0px 0px 4px $lightBlack;
 }
 
 #fixed_btn:hover {
@@ -324,7 +350,7 @@ input:focus {
     padding: 25px 40px;
     border-radius: 10px;
     box-sizing: border-box;
-    background-color: #eaeaea;
+    background-color: $darkWhite;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -358,13 +384,13 @@ input:focus {
         height: 35px;
     
         line-height: 35px;
-        color: #6b6b6b;
+        color: $lightBlack;
         font-size: 16px;
         text-indent: 0.5em;
     
         border: 0px solid transparent;
         border-bottom: 2px solid #afafaf;
-        background-color: #e6e6e6;
+        background-color: $darkWhite;
     }
 
     & select {
@@ -372,13 +398,13 @@ input:focus {
 
         width: 60px;
 
-        color: #6b6b6b;
+        color: $lightBlack;
         font-size: 14px;
         text-indent: 0.5em;
 
         border: 0px solid transparent;
         border-bottom: 2px solid #afafaf;
-        background-color: #e6e6e6;
+        background-color: $darkWhite;
 
         &:focus {
             outline: none;
@@ -421,7 +447,7 @@ input:focus {
         margin: 10px 1%;
         padding: 5px 10px;
     
-        color: #6b6b6b;
+        color: $lightBlack;
         font-size: 16px;
         line-height: 28px;
         text-indent: 0.5em;
@@ -430,7 +456,7 @@ input:focus {
         border: 0px solid transparent;
         border-top: 2px solid #afafaf;
         border-bottom: 2px solid #afafaf;
-        background-color: #eaeaea;
+        background-color: $darkWhite;
     }
 }
 
@@ -442,7 +468,7 @@ input:focus {
 
     text-align: center;
     font-size: 20px;
-    color: #6b6b6b;
+    color: $lightBlack;
 }
 
 .input_avator {
@@ -594,7 +620,7 @@ input:focus {
                 background-color: #8291A5;
 
                 &>a {
-                    color: #eaeaea;
+                    color: $darkWhite;
                 }
             }
         }
@@ -621,11 +647,11 @@ input:focus {
     width: 180px;
     height: 50px;
     box-sizing: border-box;
-    border: 1px solid #6b6b6b;
+    border: 1px solid $lightBlack;
     background-color: transparent;
 
     transition: color 0.6s;
-    color: #6b6b6b;
+    color: $lightBlack;
     font-size: 20px;
     line-height: 50px;
     text-align: center;
@@ -634,7 +660,7 @@ input:focus {
 }
 
 .more_info:hover {
-    color: #eaeaea;
+    color: $darkWhite;
 }
 
 .more_info::before {
@@ -649,20 +675,20 @@ input:focus {
     width: 0;
     height: 50px;
     box-sizing: border-box;
-    border: 0px solid #6b6b6b;
+    border: 0px solid $lightBlack;
 
-    color: #eaeaea;
+    color: $darkWhite;
     font-size: 20px;
     line-height: 50px;
     text-align: center;
     font-weight: lighter;
-    background-color: #6b6b6b;
+    background-color: $lightBlack;
 }
 
 .more_info:hover::before {
     content: '';
     width: 180px;
-    border: 1px solid #6b6b6b;
+    border: 1px solid $lightBlack;
 }
 
 .more_info>#text {
@@ -673,7 +699,7 @@ input:focus {
 
 .getDate {
     margin-top: 20px;
-    color: #6b6b6b;
+    color: $lightBlack;
     font-size: 16px;
     line-height: 40px;
     font-weight: lighter;

@@ -12,7 +12,9 @@ $(() => {
     })
 
     $('#fixed_btn').on('click', function () {
-        $(window).scrollTop(0);
+        $('html,body').animate({
+            scrollTop: 0
+        }, 400, 'linear');
         $(this).hide();
     })
 })
