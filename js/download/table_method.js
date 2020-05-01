@@ -158,8 +158,9 @@ $(() => {
 
     function isSearchMethod(tableElement) {
         if (tableElement.parents('.table_frame').attr('searchMethod') === undefined) {
-            tableElement.parents('.table_frame').attr('searchMethod', false);
+            return false;
         }
+
         return tableElement.parents('.table_frame').attr('searchMethod');
     }
 
