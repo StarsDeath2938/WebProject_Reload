@@ -213,7 +213,6 @@ $(() => {
 
     $('input[name=table_search]').on('blur', function () {
         if ($(this).val().trim() != '') {
-            // isSearchMethod = true;
             $(this).parents('.table_frame').attr('searchMethod', true);
             $(this).parents('.table_frame').find('tbody').children().removeAttr('getSearched').hide();
             $(this).parents('.table_frame').find('tbody>tr').children(`:contains(${$(this).val()})`).parent().attr('getSearched', true).show();
@@ -223,7 +222,6 @@ $(() => {
         }
         // ---
         else {
-            // isSearchMethod = false;
             $(this).parents('.table_frame').attr('searchMethod', false);
             tablePaginationMethod($(this).parents('.table_frame').find('.table_pagination'), $(this).parents('.table_frame').find('tbody'));
             tableInfoStringMethod($(this).parents('.table_frame').find('.table_info'), $(this).parents('.table_frame').find('tbody'));
