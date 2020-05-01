@@ -1,7 +1,5 @@
 $(() => {
 
-    let isSearchMethod = false;
-
     function Initalalization() {
         let globalInfo = {
             "Fanver": {
@@ -103,7 +101,7 @@ $(() => {
         let pageCount = tableElement.parents('.table_frame').find('.table_pagination').children('.active').index();
         let showEntriesCount = parseInt(tableElement.parents('.table_frame').find('select[name=table_select]').val());
         // ---
-        if (isSearchMethod) {
+        if (isSearchMethod(tableElement)) {
             tableElement.children('[getSearched=true]').hide();
             for (let i = (pageCount - 1) * showEntriesCount; i < pageCount * showEntriesCount; i++) {
                 tableElement.children('[getSearched=true]').eq(i).show();
@@ -126,7 +124,7 @@ $(() => {
         let index = 0;
         let showEntriesCount = parseInt(tableElement.parents('.table_frame').find('select[name=table_select]').val());
         // ---
-        if (isSearchMethod) {
+        if (isSearchMethod(tableElement)) {
             while (index * showEntriesCount < tableElement.children('[getSearched=true]').length) {
                 pagination.children().eq(index + 1).show();
                 index++;
@@ -150,12 +148,19 @@ $(() => {
         let firstVisibleIndex = (pageCount - 1) * showEntriesCount + 1;
         let lastVisibleIndex = tableElement.children(':visible').eq(showEntriesCount - 1).index() + 1;
         // ---
-        isSearchMethod ? totalElementLength = tableElement.children('[getSearched=true]').length : null;
+        isSearchMethod(tableElement) ? totalElementLength = tableElement.children('[getSearched=true]').length : null;
         lastVisibleIndex == 0 ? lastVisibleIndex = totalElementLength : null;
         // ---
         strElement.children('i').eq(0).html(firstVisibleIndex);
         strElement.children('i').eq(1).html(lastVisibleIndex);
         strElement.children('i').eq(2).html(totalElementLength);
+    }
+
+    function isSearchMethod(tableElement) {
+        if (tableElement.parents('.table_frame').attr('searchMethod') === undefined) {
+            tableElement.parents('.table_frame').attr('searchMethod', false);
+        }
+        return tableElement.parents('.table_frame').attr('searchMethod');
     }
 
     Initalalization();
@@ -208,7 +213,8 @@ $(() => {
 
     $('input[name=table_search]').on('blur', function () {
         if ($(this).val().trim() != '') {
-            isSearchMethod = true;
+            // isSearchMethod = true;
+            $(this).parents('.table_frame').attr('searchMethod', true);
             $(this).parents('.table_frame').find('tbody').children().removeAttr('getSearched').hide();
             $(this).parents('.table_frame').find('tbody>tr').children(`:contains(${$(this).val()})`).parent().attr('getSearched', true).show();
             // ---
@@ -217,7 +223,8 @@ $(() => {
         }
         // ---
         else {
-            isSearchMethod = false;
+            // isSearchMethod = false;
+            $(this).parents('.table_frame').attr('searchMethod', false);
             tablePaginationMethod($(this).parents('.table_frame').find('.table_pagination'), $(this).parents('.table_frame').find('tbody'));
             tableInfoStringMethod($(this).parents('.table_frame').find('.table_info'), $(this).parents('.table_frame').find('tbody'));
         }
