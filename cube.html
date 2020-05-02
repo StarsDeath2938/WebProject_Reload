@@ -61,23 +61,23 @@
         <img src="./img/TopLine.png" alt="Fail Load Resources" class="topline_img">
         <div class="main_frame">
             <!-- // -->
-            <div class="cube_frame">
+            <div class="cube_frame" binding='Background'>
                 <div class="cube_box">
                     <div class="cube_outer">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div binding='outerBox'></div>
+                        <div binding='outerBox'></div>
+                        <div binding='outerBox'></div>
+                        <div binding='outerBox'></div>
+                        <div binding='outerBox'></div>
+                        <div binding='outerBox'></div>
                     </div>
                     <div class="cube_inner">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div binding='innerBox'></div>
+                        <div binding='innerBox'></div>
+                        <div binding='innerBox'></div>
+                        <div binding='innerBox'></div>
+                        <div binding='innerBox'></div>
+                        <div binding='innerBox'></div>
                     </div>
                 </div>
             </div>
@@ -86,56 +86,56 @@
                 <div class="config_cube content">
                     <h2>Color Config</h2>
                     <div class="divider"></div>
-                    <div class="prop_frame" id="outer_color">
+                    <div class="prop_frame">
                         <div class="submit_title">Outer Box</div>
-                        <div class="submit_info_frame">
+                        <div class="submit_info_frame" formTarget='outerBox'>
                             <div class="prop_box">
                                 <div class="prop_name">Red:</div>
-                                <input type="text" name="outer_prop_red" id="outer_propRed">
+                                <input type="text" name="outer_prop_red" mappingValue='Red'>
                                 <div class="prop_name">Green:</div>
-                                <input type="text" name="outer_prop_green" id="outer_propGreen">
+                                <input type="text" name="outer_prop_green" mappingValue='Green'>
                                 <div class="prop_name">Blue:</div>
-                                <input type="text" name="outer_prop_blue" id="outer_propBlue">
+                                <input type="text" name="outer_prop_blue" mappingValue='Blue'>
                             </div>
                             <div class="prop_box right">
                                 <div class="prop_name">HEX Value:</div>
-                                <input type="text" name="outer_prop_hex" class="wider" id="outer_propHex">
+                                <input type="text" name="outer_prop_hex" class="wider" mappingValue='rgbHEX'>
                             </div>
                         </div>
                     </div>
                     <!-- // -->
-                    <div class="prop_frame" id="inner_color">
+                    <div class="prop_frame">
                         <div class="submit_title">Inner Box</div>
-                        <div class="submit_info_frame">
+                        <div class="submit_info_frame" formTarget='innerBox'>
                             <div class="prop_box">
                                 <div class="prop_name">Red:</div>
-                                <input type="text" name="inner_prop_red" id="inner_propRed">
+                                <input type="text" name="outer_prop_red" mappingValue='Red'>
                                 <div class="prop_name">Green:</div>
-                                <input type="text" name="inner_prop_green" id="inner_propGreen">
+                                <input type="text" name="outer_prop_green" mappingValue='Green'>
                                 <div class="prop_name">Blue:</div>
-                                <input type="text" name="inner_prop_blue" id="inner_propBlue">
+                                <input type="text" name="outer_prop_blue" mappingValue='Blue'>
                             </div>
                             <div class="prop_box right">
                                 <div class="prop_name">HEX Value:</div>
-                                <input type="text" name="inner_prop_hex" class="wider" id="inner_propHex">
+                                <input type="text" name="inner_prop_hex" class="wider" mappingValue='rgbHEX'>
                             </div>
                         </div>
                     </div>
                     <!-- // -->
-                    <div class="prop_frame" id="bg_color">
+                    <div class="prop_frame">
                         <div class="submit_title">Background</div>
-                        <div class="submit_info_frame">
+                        <div class="submit_info_frame" formTarget='Background'>
                             <div class="prop_box">
                                 <div class="prop_name">Red:</div>
-                                <input type="text" name="bg_prop_red" id="bg_propRed">
+                                <input type="text" name="outer_prop_red" mappingValue='Red'>
                                 <div class="prop_name">Green:</div>
-                                <input type="text" name="bg_prop_green" id="bg_propGreen">
+                                <input type="text" name="outer_prop_green" mappingValue='Green'>
                                 <div class="prop_name">Blue:</div>
-                                <input type="text" name="bg_prop_blue" id="bg_propBlue">
+                                <input type="text" name="outer_prop_blue" mappingValue='Blue'>
                             </div>
                             <div class="prop_box right">
                                 <div class="prop_name">HEX Value:</div>
-                                <input type="text" name="bg_prop_hex" class="wider" id="bg_propHex">
+                                <input type="text" name="inner_prop_hex" class="wider" mappingValue='rgbHEX'>
                             </div>
                         </div>
                     </div>
@@ -146,9 +146,9 @@
                     <div class="divider"></div>
                     <div class="prop_frame" id="outer_size">
                         <div class="submit_title">Outer Box</div>
-                        <div class="submit_info_frame">
+                        <div class="submit_info_frame" formTarget='outerBox'>
                             <div class="prop_name">Opacity:</div>
-                            <input type="text" id="outer_opacity">
+                            <input type="text" mappingValue='Opacity'>
                             <div class="prop_scroll_frame">
                                 <div class="prop_scroll_box">
                                     <div class="scroll_btn"></div>
@@ -158,9 +158,9 @@
                     </div>
                     <div class="prop_frame" id="inner_size">
                         <div class="submit_title">Inner Box</div>
-                        <div class="submit_info_frame">
+                        <div class="submit_info_frame" formTarget='innerBox'>
                             <div class="prop_name">Opacity:</div>
-                            <input type="text" id="inner_opacity">
+                            <input type="text" mappingValue='Opacity'>
                             <div class="prop_scroll_frame">
                                 <div class="prop_scroll_box">
                                     <div class="scroll_btn"></div>

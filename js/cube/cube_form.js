@@ -48,180 +48,65 @@ $(() => {
         return Hex;
     };
 
-    function setValue(targetElement, isHex) {
-        switch (targetElement) {
-            case 'outer': {
-                if (isHex) {
-                    $('#outer_propHex').val(HexMethod($('#outer_propHex').val()));
+    function setValue(formElement, isHex) {
+        let Red = formElement.find('[mappingValue=Red]').val();
+        let Green = formElement.find('[mappingValue=Green]').val();
+        let Blue = formElement.find('[mappingValue=Blue]').val();
+        let rgbHEX = formElement.find('[mappingValue=rgbHEX]').val();
 
-                    $('.cube_outer>div').css({
-                        'background-color': HexMethod($('#outer_propHex').val()),
-                        'box-shadow': `0px 0px 8px ${HexMethod($('#outer_propHex').val())}`
-                    });
+        if (isHex) {
+            formElement.find('[mappingValue=rgbHEX]').val(HexMethod(rgbHEX));
 
-                    $('#outer_propRed').val(parseInt(HexMethod($('#outer_propHex').val()).substring(1, 3), 16));
-                    $('#outer_propGreen').val(parseInt(HexMethod($('#outer_propHex').val()).substring(3, 5), 16));
-                    $('#outer_propBlue').val(parseInt(HexMethod($('#outer_propHex').val()).substring(5, 7), 16));
-                }
+            $(`[binding=${formElement.attr('formTarget')}]`).css({
+                'background-color': HexMethod(rgbHEX),
+                'box-shadow': `0px 0px 8px ${HexMethod(rgbHEX)}`
+            });
 
-                else {
-                    $('.cube_outer>div').css({
-                        'background-color': `rgb(${$('#outer_propRed').val()},${$('#outer_propGreen').val()},${$('#outer_propBlue').val()})`,
-                        'box-shadow': `0px 0px 8px rgb(${$('#outer_propRed').val()},${$('#outer_propGreen').val()},${$('#outer_propBlue').val()})`
-                    });
+            formElement.find('[mappingValue=Red]').val(parseInt(HexMethod(rgbHEX).substring(1, 3), 16));
+            formElement.find('[mappingValue=Green]').val(parseInt(HexMethod(rgbHEX).substring(3, 5), 16));
+            formElement.find('[mappingValue=Blue]').val(parseInt(HexMethod(rgbHEX).substring(5, 7), 16));
+        }
 
-                    $('#outer_propHex').val(`#${parseInt($('#outer_propRed').val()).toString(16) + parseInt($('#outer_propGreen').val()).toString(16) + parseInt($('#outer_propBlue').val()).toString(16)}`);
-                    $('#outer_propHex').val(HexMethod($('#outer_propHex').val()));
-                }
-
-                break;
-            }
-
-            case 'inner': {
-                if (isHex) {
-                    $('#inner_propHex').val(HexMethod($('#inner_propHex').val()));
-
-                    $('.cube_inner>div').css({
-                        'background-color': HexMethod($('#inner_propHex').val()),
-                        'box-shadow': `0px 0px 16px ${HexMethod($('#inner_propHex').val())}`
-                    });
-
-                    $('#inner_propRed').val(parseInt(HexMethod($('#inner_propHex').val()).substring(1, 3), 16));
-                    $('#inner_propGreen').val(parseInt(HexMethod($('#inner_propHex').val()).substring(3, 5), 16));
-                    $('#inner_propBlue').val(parseInt(HexMethod($('#inner_propHex').val()).substring(5, 7), 16));
-                }
-
-                else {
-                    $('.cube_inner>div').css({
-                        'background-color': `rgb(${$('#inner_propRed').val()},${$('#inner_propGreen').val()},${$('#inner_propBlue').val()})`,
-                        'box-shadow': `0px 0px 16px rgb(${$('#inner_propRed').val()},${$('#inner_propGreen').val()},${$('#inner_propBlue').val()})`
-                    });
-                    $('#inner_propHex').val(`#${parseInt($('#inner_propRed').val()).toString(16) + parseInt($('#inner_propGreen').val()).toString(16) + parseInt($('#inner_propBlue').val()).toString(16)}`);
-                    $('#inner_propHex').val(HexMethod($('#inner_propHex').val()));
-                }
-
-                break;
-            }
-
-            case 'bg': {
-                if (isHex) {
-                    $('#bg_propHex').val(HexMethod($('#bg_propHex').val()));
-
-                    $('.cube_frame').css({
-                        'background-color': HexMethod($('#bg_propHex').val())
-                    });
-
-                    $('#bg_propRed').val(parseInt(HexMethod($('#bg_propHex').val()).substring(1, 3), 16));
-                    $('#bg_propGreen').val(parseInt(HexMethod($('#bg_propHex').val()).substring(3, 5), 16));
-                    $('#bg_propBlue').val(parseInt(HexMethod($('#bg_propHex').val()).substring(5, 7), 16));
-                }
-
-                else {
-                    $('.cube_frame').css({
-                        'background-color': `rgb(${$('#bg_propRed').val()},${$('#bg_propGreen').val()},${$('#bg_propBlue').val()})`
-                    });
-                    $('#bg_propHex').val(`#${parseInt($('#bg_propRed').val()).toString(16) + parseInt($('#bg_propGreen').val()).toString(16) + parseInt($('#bg_propBlue').val()).toString(16)}`);
-                    $('#bg_propHex').val(HexMethod($('#bg_propHex').val()));
-                }
-
-                break;
-            }
-        };
+        else {
+            $(`[binding=${formElement.attr('formTarget')}]`).css({
+                'background-color': `rgb(${Red},${Green},${Blue})`,
+                'box-shadow': `0px 0px 8px rgb(${Red},${Green},${Blue})`
+            });
+            formElement.find('[mappingValue=rgbHEX]').val(HexMethod(`#${parseInt(Red).toString(16) + parseInt(Green).toString(16) + parseInt(Blue).toString(16)}`));
+        }
     };
 
     // initialization
-    function initialization() {
-        let tempHEX = '#';
 
-        for (let i = 0; i <= 3; i++) {
-            if (i == 3) {
-                $('#outer_color input').eq(3).val(tempHEX.toUpperCase());
-                tempHEX = '#';
-                break;
-            }
-            $('#outer_color input').eq(i).val($('.cube_outer>div').css('background-color').substring(i * 5 + 4, i * 5 + 7));
-            tempHEX += Number($('.cube_outer>div').css('background-color').substring(i * 5 + 4, i * 5 + 7)).toString(16);
-        }
-
-        for (let i = 0; i <= 3; i++) {
-            if (i == 3) {
-                $('#inner_color input').eq(3).val(tempHEX.toUpperCase());
-                tempHEX = '#';
-                break;
-            }
-            $('#inner_color input').eq(i).val($('.cube_inner>div').css('background-color').substring(i * 5 + 4, i * 5 + 7));
-            tempHEX += Number($('.cube_inner>div').css('background-color').substring(i * 5 + 4, i * 5 + 7)).toString(16);
-        }
-
-        for (let i = 0; i <= 3; i++) {
-            if (i == 3) {
-                $('#bg_color input').eq(3).val(tempHEX.toUpperCase());
-                tempHEX = '#';
-                break;
-            }
-            $('#bg_color input').eq(i).val($('.cube_frame').css('background-color').substring(i * 5 + 4, i * 5 + 7));
-            tempHEX += Number($('.cube_frame').css('background-color').substring(i * 5 + 4, i * 5 + 7)).toString(16);
-        }
+    function initialization(formElement) {
+        let Red = parseInt($(`[binding=${formElement.attr('formTarget')}]`).css('background-color').substring(4, 7));
+        let Green = parseInt($(`[binding=${formElement.attr('formTarget')}]`).css('background-color').substring(9, 12));
+        let Blue = parseInt($(`[binding=${formElement.attr('formTarget')}]`).css('background-color').substring(14, 17));
+        // ---
+        formElement.find('[mappingValue=Red]').val(Red);
+        formElement.find('[mappingValue=Green]').val(Green);
+        formElement.find('[mappingValue=Blue]').val(Blue);
+        formElement.find('[mappingValue=rgbHEX]').val(`#${Red.toString(16)}${Green.toString(16)}${Blue.toString(16)}`.toUpperCase());
     }
 
-    initialization();
+    initialization($('[formTarget=outerBox]'));
+    initialization($('[formTarget=innerBox]'));
+    initialization($('[formTarget=Background]'));
 
     // form action
 
     $('input').on('blur', function () {
 
-        switch ($(this).parents().eq(2).attr('id')) {
-
-            case 'outer_color': {
-                if ($(this).attr('id') == 'outer_propHex') {
-                    setValue('outer', true);
-                }
-
-                else {
-                    $(this).val() > 0 ? null : $(this).val(0);
-                    $(this).val() < 255 ? null : $(this).val(255);
-                }
-
-                setValue('outer', false);
-
-                break;
-            }
-
-            case 'inner_color': {
-                if ($(this).attr('id') == 'inner_propHex') {
-                    setValue('outer', true);
-                }
-
-                else {
-                    $(this).val() > 0 ? null : $(this).val(0);
-                    $(this).val() < 255 ? null : $(this).val(255);
-                }
-
-                setValue('inner', false);
-
-                break;
-            }
-
-            case 'bg_color': {
-                if ($(this).attr('id') == 'bg_propHex') {
-                    setValue('bg', true);
-                }
-
-                else {
-                    $(this).val() > 0 ? null : $(this).val(0);
-                    $(this).val() < 255 ? null : $(this).val(255);
-                }
-
-                setValue('bg', false);
-
-                break;
-            }
-
-            default: {
-                break;
-            }
-
+        if ($(this).attr('mappingValue') == 'rgbHEX') {
+            setValue($(this).parents('[formTarget]'), true);
         }
+
+        else {
+            $(this).val() < 0 ? $(this).val(0) : null;
+            $(this).val() > 255 ? $(this).val(255) : null;
+            setValue($(this).parents('[formTarget]'));
+        }
+
 
     });
 

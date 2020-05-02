@@ -4,20 +4,19 @@ $(() => {
 
     function formAction(Element) {
         if (Element == null) { return };
-        Element.parents('.submit_info_frame').children('input').val(
+        Element.parents('[formTarget]').children('input').val(
             (Math.floor(Element.position().left / (Element.parent('.prop_scroll_box').width() - Element.outerWidth()) * 100) - 2) / 100
         );
     };
 
     function setOpacity() {
-        $('.cube_outer>div').css({ 'opacity': $('#outer_opacity').val() });
-        $('.cube_inner>div').css({ 'opacity': $('#inner_opacity').val() });
+        $('[binding=outerBox]').css({ 'opacity': $('[formTarget=outerBox]').find('[mappingValue=Opacity]').val() });
+        $('[binding=innerBox]').css({ 'opacity': $('[formTarget=innerBox]').find('[mappingValue=Opacity]').val() });
     };
 
     $('.scroll_btn').on('mousedown', function (e) {
         isMoving = true;
         targetElement = $(this);
-
     });
 
     $('.prop_scroll_box').on('mousemove', function (e) {
@@ -51,9 +50,9 @@ $(() => {
 
     // ---
 
-    $('#outer_opacity, #inner_opacity').val('0.5');
+    $('[mappingValue=Opacity]').val('0.5');
 
-    $('#outer_opacity, #inner_opacity').on('blur', function () {
+    $('[mappingValue=Opacity]').on('blur', function () {
         isNaN($(this).val()) ? $(this).val(0) : null;
         let value = $(this).val() * ($('.prop_scroll_box').outerWidth() - $('.scroll_btn').outerWidth() / 2);
         value <= $('.scroll_btn').outerWidth() / 2 ? value = $('.scroll_btn').outerWidth() / 2 : null;
@@ -61,6 +60,7 @@ $(() => {
         $(this).val() < 0 ? $(this).val(0) : null;
         $(this).val() > 1 ? $(this).val(1) : null;
         $(this).siblings('.prop_scroll_frame').children().children().css({ 'left': `${value}px` });
+        setOpacity();
     });
 
 });
