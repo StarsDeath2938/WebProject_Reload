@@ -98,6 +98,7 @@ $(() => {
     }
 
     function tableElementsMethod(tableElement) {
+        console.log(isSearchMethod(tableElement));
         let pageCount = tableElement.parents('.table_frame').find('.table_pagination').children('.active').index();
         let showEntriesCount = parseInt(tableElement.parents('.table_frame').find('select[name=table_select]').val());
         // ---
@@ -157,11 +158,10 @@ $(() => {
     }
 
     function isSearchMethod(tableElement) {
-        if (tableElement.parents('.table_frame').attr('searchMethod') === undefined) {
-            return false;
-        }
-
-        return tableElement.parents('.table_frame').attr('searchMethod');
+        if (tableElement.parents('.table_frame').attr('searchMethod') === undefined) { return false };
+        // ---
+        if (tableElement.parents('.table_frame').attr('searchMethod') == 'true') { return true };
+        return false;
     }
 
     Initalalization();
@@ -224,6 +224,8 @@ $(() => {
         // ---
         else {
             $(this).parents('.table_frame').attr('searchMethod', false);
+            $('[getSearched=true]').removeAttr('getSearched');
+            // ---
             tablePaginationMethod($(this).parents('.table_frame').find('.table_pagination'), $(this).parents('.table_frame').find('tbody'));
             tableInfoStringMethod($(this).parents('.table_frame').find('.table_info'), $(this).parents('.table_frame').find('tbody'));
         }
